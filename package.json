@@ -1,0 +1,34 @@
+{
+  "name": "require-can-renderers",
+  "version": "0.0.0",
+  "description": "CanJS renderers for RequireJS",
+  "homepage": "https://github.com/retro/require-can-renderers",
+  "bugs": "https://github.com/retro/require-can-renderers/issues",
+  "author": {
+    "name": "Mihael Konjević",
+    "email": "konjevic@gmail.com",
+    "url": "https://github.com/retro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/retro/require-can-renderers.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "can-compile" : "0.2.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.9.0",
+    "grunt-contrib-requirejs": "0.3.3"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
