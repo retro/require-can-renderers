@@ -6,7 +6,10 @@
 </head>
 <body>
   <div id="mocha"></div>
-  <div id="test"></div>
+  <div id="test">
+    <div id="mustache"></div>
+    <div id="ejs"></div>
+  </div>
   <script src="deps/require.js"></script>
   <script src="../node_modules/mocha/mocha.js"></script>
   <script>
@@ -20,7 +23,8 @@
       paths : {
         'can'      : 'deps/can/can',
         'jquery'   : 'deps/jquery',
-        'mustache' : '../lib/mustache'
+        'mustache' : '../lib/mustache',
+        'ejs'      : '../lib/ejs'
       },
       shim: {
         jquery : {
@@ -28,16 +32,23 @@
         }
       }
     })
-    require(['jquery', 'can/util/string', 'mustache!./init', 'can/view/modifiers'], function($, can, initView){
-      suite('Mustache', function(){
+    require(['jquery', 'can/util/string', 'mustache!./test', 'ejs!./test', 'can/view/modifiers'], function($, can, mustacheView, ejsView){
+      suite('Renderers', function(){
         setup(function(){
-          $('#test').html(initView({
+          $('#mustache').html(mustacheView({
             engine : 'mustache'
           }));
+          $('#ejs').html(ejsView({
+            engine : 'ejs'
+          }));
         });
-        test('renders correctly', function(){
-          var text = $('#test').text();
+        test('mustache renders correctly', function(){
+          var text = $('#mustache').text();
           assert('Hello from mustache!' === text)
+        });
+        test('ejs renders correctly', function(){
+          var text = $('#ejs').text();
+          assert('Hello from ejs!' === text)
         });
       });
       mocha.run();
