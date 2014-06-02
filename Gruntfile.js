@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 					name: 'app',
 					baseUrl: 'test',
 					mainConfigFile: 'test/app.js',
-					out: 'test/actual.js'
+					out: 'test/app.min.js'
 				}
 			}
 		}

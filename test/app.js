@@ -1,24 +1,31 @@
 require.config({
 	"paths": {
-		"can": "../can",
-		"ejs": "../lib/ejs",
-		"jquery": "../lib/jquery"
+		'jquery'   : '../bower_components/jquery/dist/jquery',
+		'can'      : '../bower_components/canjs/amd/can',
+		"ejs"      : "../lib/ejs",
+		"mustache" : "../lib/mustache",
+		"stache"   : "../lib/stache"
 	}
 });
 
-require(['can/util/library', 'can/view/ejs', 'ejs!init', 'ejs!views/foo', 'can/observe'], function(can, EJS, init, foo) {
+require([
+'jquery',
+'ejs!./views/test',
+'mustache!./views/test',
+'stache!./views/test',
+'can/view/modifiers'
+], function($, mustacheView, stacheView, ejsView) {
 
-	var html = init({ foo: 'bar' });
-	$('div').html(html);
+	$('#mustache').html(mustacheView({
+		engine : 'mustache'
+	}));
 
-	var bar = new can.Observe({
-		time: Date.now()
-	});
+	$('#stache').html(stacheView({
+		engine : 'stache'
+	}));
 
-	$('body').append(foo(bar));
-
-	setTimeout(function() {
-		bar.attr('time', Date.now());
-	}, 1000);
+	$('#ejs').html(ejsView({
+		engine : 'ejs'
+	}));
 
 });

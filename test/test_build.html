@@ -15,7 +15,7 @@
   <script src="../bower_components/requirejs/require.js"></script>
   <script src="../bower_components/qunit/qunit/qunit.js"></script>
   <script>
-    require(['./app'], function(){
+    require(['./app.min'], function(){
 
       module('can-renderers');
 
@@ -33,7 +33,7 @@
         var text = $('#ejs').text();
         equal('Hello from ejs! "FOO" ' + "'BAR'", text)
       });
-
+      
     })
   </script>
 </body>

@@ -1,6 +1,6 @@
 {
   "name": "require-can-renderers",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CanJS renderers for RequireJS",
   "homepage": "https://github.com/retro/require-can-renderers",
   "bugs": "https://github.com/retro/require-can-renderers/issues",
@@ -17,11 +17,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "can-compile" : "0.2.0"
+    "can-compile": "0.6.0",
+    "shelljs": "0.3.0",
+    "jsesc": "^0.4.3"
   },
   "devDependencies": {
-    "mocha": "~1.9.0",
-    "grunt-contrib-requirejs": "0.3.3"
+    "grunt-contrib-requirejs": "0.4.4"
   },
   "engines": {
     "node": ">=0.8.0"
