@@ -19,20 +19,22 @@
 
       module('can-renderers');
 
-      test('mustache renders correctly', function(){
-        var text = $('#mustache').text();
-        equal('Hello from mustache! "FOO" ' + "'BAR'", text)
-      });
+      setTimeout(function(){
+        test('mustache renders correctly', function(){
+          var text = document.getElementById('mustache').innerHTML;
+          equal('Hello from mustache! "FOO" ' + "'BAR'", text)
+        });
 
-      test('stache renders correctly', function(){
-        var text = $('#stache').text();
-        equal('Hello from stache! "FOO" ' + "'BAR'", text)
-      });
+        test('stache renders correctly', function(){
+          var text = document.getElementById('stache').innerHTML;
+          equal('Hello from stache! "FOO" ' + "'BAR'", text)
+        });
 
-      test('ejs renders correctly', function(){
-        var text = $('#ejs').text();
-        equal('Hello from ejs! "FOO" ' + "'BAR'", text)
-      });
+        test('ejs renders correctly', function(){
+          var text = document.getElementById('ejs').innerHTML;
+          equal('Hello from ejs! "FOO" ' + "'BAR'", text)
+        });
+      }, 1000)
 
     })
   </script>

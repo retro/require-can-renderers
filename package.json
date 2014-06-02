@@ -1,6 +1,6 @@
 {
   "name": "require-can-renderers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CanJS renderers for RequireJS",
   "homepage": "https://github.com/retro/require-can-renderers",
   "bugs": "https://github.com/retro/require-can-renderers/issues",
